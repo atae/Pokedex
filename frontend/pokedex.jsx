@@ -20,3 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.RECEIVE_A_POKEMON = RECEIVE_A_POKEMON;
   window.requestAPokemon = requestAPokemon;
 });
+
+// default state
+// nidorino nidorina vulpix
+// smak that
+// graveler
+// Tae is bae
+// growlithe exeggcute oddish vaporeon clefable

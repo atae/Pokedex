@@ -1,18 +1,32 @@
 import React from 'react';
 
-const PokemonDetail = ({name, image_url, attack, defense, moves, poke_type, items}) => {
+const PokemonDetail = ({pokemonDetail, router, children}) => {
+
+  const handleClick = url => e => router.push(url);
+
+  let itemNames = pokemonDetail.items.map( (item, index) => (
+    <li key={index}
+        onClick={handleClick(`/pokemon/${pokemonDetail.id}/toy/${index}`)}>
+      {item.name}</li>
+  ));
 
   return (
-    <div>
-      <img src={image_url}/>
-      <h2>{name}</h2>
+    <div className="pokemon-detail">
+      <img src={pokemonDetail.image_url}/>
       <ul>
-        <li>Type:{poke_type}</li>
-        <li>Attack:{attack}</li>
-        <li>Defense:{defense}</li>
-        <li>Moves:{moves}</li>
-        <li>Items:{items}</li>
+        <li><h2>{pokemonDetail.name}</h2></li>
+        <li>Type: {pokemonDetail.poke_type}</li>
+        <li>Attack: {pokemonDetail.attack}</li>
+        <li>Defense: {pokemonDetail.defense}</li>
+        <li>Moves: {pokemonDetail.moves.join(', ')}</li>
       </ul>
+      <section className="toys">
+        <h3>Toys</h3>
+        <ul className="toy-list">
+          {itemNames}
+        </ul>
+      </section>
+      {children}
     </div>
   );
 };
