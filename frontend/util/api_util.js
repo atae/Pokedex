@@ -13,3 +13,12 @@ export const fetchAPokemon = (id, success) => (
     success
   })
 );
+
+export const postAPokemon = (formData, success) => (
+  $.ajax({
+    method: "POST",
+    url: `/api/pokemon`,
+    data: formData,
+    success
+  })
+);

@@ -5,7 +5,8 @@ import Root from './components/root';
 //testing
 import {fetchAPokemon} from './util/api_util';
 import {RECEIVE_A_POKEMON, receiveAPokemon,
-        requestAPokemon} from './actions/pokemon_actions';
+        requestAPokemon, createPokemon} from './actions/pokemon_actions';
+import merge from "lodash/merge";
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.receiveAPokemon = receiveAPokemon;
   window.RECEIVE_A_POKEMON = RECEIVE_A_POKEMON;
   window.requestAPokemon = requestAPokemon;
+  window.createPokemon = createPokemon;
+  window.merge = merge;
 });
 
 // default state
